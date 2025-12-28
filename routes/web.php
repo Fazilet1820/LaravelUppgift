@@ -18,8 +18,7 @@ Route::get('/customers', CustomerListComponent::class)->name('customers.index');
 Route::get('/customers/{customer}/edit', CustomerForm::class)->name('customers.edit');
 Route::get('/customers/{customer}', CustomerDetails::class)->name('customers.show');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
+Route::view('/dashboard', 'dashboard')
     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
