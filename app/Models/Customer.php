@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Enums\MembershipType;
+use App\Enums\CustomerKind;
+
+class Customer extends Model
+{
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'address',
+        'date_of_birth',
+        'membership_type',
+        'is_active',
+        'customer_kind'
+    ];
+
+    protected $casts = [
+        'date_of_birth' => 'date',
+        'is_active' => 'boolean',
+        'membership_type' => MembershipType::class,
+        'customer_kind' => CustomerKind::class,
+    ];
+}
