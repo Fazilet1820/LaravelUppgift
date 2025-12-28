@@ -3,10 +3,10 @@
 
         {{-- Başlık ve Yeni Müşteri Butonu --}}
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-gray-800">Müşteri Listesi</h2>
+            <h2 class="text-2xl font-bold text-gray-800">Kundlista</h2>
             <a href="{{ route('customers.form') }}"
                class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
-                + Yeni Müşteri
+                + Ny Kund
             </a>
         </div>
 
@@ -22,7 +22,7 @@
             <input
                 type="text"
                 wire:model.live="search"
-                placeholder="İsim, email veya telefon ile ara..."
+                placeholder="Sök efter namn, e-post eller telefon..."
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
         </div>
@@ -32,10 +32,10 @@
             <table class="min-w-full table-auto">
                 <thead class="bg-gray-100">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">İsim</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Namn</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Email</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Telefon</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">İşlemler</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Åtgärder</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -56,24 +56,24 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <a href="{{ route('customers.show', $customer->id) }}"
                                    class="text-blue-600 hover:text-blue-900 mr-3">
-                                    Görüntüle
+                                    View
                                 </a>
                                 <a href="{{ route('customers.edit', $customer->id) }}"
                                    class="text-green-600 hover:text-green-900 mr-3">
-                                    Düzenle
+                                    Edit
                                 </a>
                                 <button
                                     wire:click="deleteCustomer({{ $customer->id }})"
-                                    wire:confirm="Bu müşteriyi silmek istediğinizden emin misiniz?"
+                                    wire:confirm="Är du säker på att du vill ta bort kunden?"
                                     class="text-red-600 hover:text-red-900">
-                                    Sil
+                                    Delete
                                 </button>
                             </td>
                         </tr>
                     @empty
                         <tr>
                             <td colspan="4" class="px-6 py-8 text-center text-gray-500">
-                                Henüz müşteri bulunmamaktadır.
+                               Det finns inga kunder ännu.
                             </td>
                         </tr>
                     @endforelse

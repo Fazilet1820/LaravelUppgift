@@ -42,7 +42,7 @@ class CustomerList extends Component
 
         if ($customer) {
             $customer->delete();
-            session()->flash('message', 'Müşteri başarıyla silindi.');
+            session()->flash('message', 'Kunde borttagen.');
         }
     }
 }
