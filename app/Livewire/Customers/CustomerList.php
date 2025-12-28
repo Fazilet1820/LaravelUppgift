@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Customers;
 
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -30,7 +30,7 @@ class CustomerList extends Component
             ->orderBy('created_at', 'desc')
             ->paginate($this->perPage);
 
-        return view('livewire.customer-list', [
+        return view('livewire.customers.customer-list', [
             'customers' => $customers
         ]);
     }

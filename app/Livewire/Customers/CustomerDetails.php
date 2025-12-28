@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Customers;
 
 use Livewire\Component;
 use App\Models\Customer;
@@ -25,7 +25,7 @@ class CustomerDetails extends Component
     {
         $customer = Customer::findOrFail($this->customerId);
 
-        return view('livewire.customer-details', [
+        return view('livewire.customers.customer-details', [
             'customer' => $customer
         ]);
     }

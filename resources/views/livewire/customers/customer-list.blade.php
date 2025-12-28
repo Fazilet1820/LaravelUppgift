@@ -4,7 +4,7 @@
         {{-- Başlık ve Yeni Müşteri Butonu --}}
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold text-gray-800">Müşteri Listesi</h2>
-            <a href="{{ route('customers.create') }}"
+            <a href="{{ route('customers.form') }}"
                class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
                 + Yeni Müşteri
             </a>
