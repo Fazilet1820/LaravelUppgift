@@ -54,21 +54,27 @@
                                 <div class="text-sm text-gray-900">{{ $customer->phone }}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <a href="{{ route('customers.show', $customer->id) }}"
-                                   class="text-blue-600 hover:text-blue-900 mr-3">
-                                    View
-                                </a>
-                                <a href="{{ route('customers.edit', $customer->id) }}"
-                                   class="text-green-600 hover:text-green-900 mr-3">
-                                    Edit
-                                </a>
-                                <button
-                                    wire:click="deleteCustomer({{ $customer->id }})"
-                                    wire:confirm="Är du säker på att du vill ta bort kunden?"
-                                    class="text-red-600 hover:text-red-900">
-                                    Delete
-                                </button>
-                            </td>
+    <a href="{{ route('customers.show', $customer->id) }}"
+       style="display: inline-block; padding: 6px 12px; background-color: #2563eb; color: white; border-radius: 6px; text-decoration: none; margin-right: 8px;"
+       onmouseover="this.style.backgroundColor='#1d4ed8'"
+       onmouseout="this.style.backgroundColor='#2563eb'">
+        Visa
+    </a>
+    <a href="{{ route('customers.edit', $customer->id) }}"
+       style="display: inline-block; padding: 6px 12px; background-color: #16a34a; color: white; border-radius: 6px; text-decoration: none; margin-right: 8px;"
+       onmouseover="this.style.backgroundColor='#15803d'"
+       onmouseout="this.style.backgroundColor='#16a34a'">
+        Redigera
+    </a>
+    <button
+        wire:click="deleteCustomer({{ $customer->id }})"
+        wire:confirm="Är du säker på att du vill ta bort kunden?"
+        style="display: inline-block; padding: 6px 12px; background-color: #dc2626; color: white; border-radius: 6px; border: none; cursor: pointer;"
+        onmouseover="this.style.backgroundColor='#b91c1c'"
+        onmouseout="this.style.backgroundColor='#dc2626'">
+        Ta bort
+    </button>
+</td>
                         </tr>
                     @empty
                         <tr>
