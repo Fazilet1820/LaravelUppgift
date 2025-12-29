@@ -68,14 +68,14 @@
                 <label for="customer_kind" class="block text-sm font-medium text-gray-700 mb-1">Kundtyp <span class="text-red-500">*</span></label>
                 <select id="customer_kind" wire:model.blur="customer_kind" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('customer_kind') border-red-500 @enderror">
                     <option value="">Välj kundtyp</option>
-                    @foreach($this->kindOptions as $option)
+                    @foreach($this->customerKindOptions as $option)
                         <option value="{{ $option['value'] }}">{{ $option['label'] }}</option>
                     @endforeach
                 </select>
                 @error('customer_kind')<p class="mt-1 text-sm text-red-600">{{ $message }}</p>@enderror
             </div>
 
-            {{-- Membership --}}
+            {{-- Membership type--}}
             <div>
                 <label for="membership_type" class="block text-sm font-medium text-gray-700 mb-1">Medlemstyp <span class="text-red-500">*</span></label>
                 <select id="membership_type" wire:model.blur="membership_type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('membership_type') border-red-500 @enderror">
@@ -96,12 +96,12 @@
         </div>
 
         {{-- Is active --}}
-        @if($this->isEditMode)
+
             <div class="flex items-center">
                 <input type="checkbox" id="is_active" wire:model.live="is_active" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                 <label for="is_active" class="ml-2 text-sm font-medium text-gray-700">Kunden är aktiv</label>
             </div>
-        @endif
+
 
         {{-- Buttons --}}
         <div class="flex items-center justify-between pt-6 border-t border-gray-200">

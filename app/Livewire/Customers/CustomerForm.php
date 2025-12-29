@@ -126,7 +126,7 @@ class CustomerForm extends Component
     }
 
     #[Computed]
-    public function kindOptions(): array
+    public function customerKindOptions(): array
     {
         return [
             ['value' => 'individual', 'label' => 'Individual'],
