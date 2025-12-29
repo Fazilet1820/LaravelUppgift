@@ -9,10 +9,6 @@ use App\Livewire\Customers\CustomerForm;
 use App\Livewire\Customers\CustomerList as CustomerListComponent;  // ← ALIAS added because of name conflict (changed folder and caused problem)
 use App\Livewire\Customers\CustomerDetails;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
-
 // Redirect home route to my dashboard when project starts
 Route::get('/', function () {
     return redirect()->route('dashboard');
