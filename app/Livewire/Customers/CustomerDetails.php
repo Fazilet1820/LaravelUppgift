@@ -8,10 +8,9 @@ use Livewire\Attributes\Locked;
 
 class CustomerDetails extends Component
 {
-    #[Locked]
-    public $customerId;
+    public int $customerId;
 
-    public function mount($id)
+    public function mount(int $id)
     {
         $this->customerId = $id;
 

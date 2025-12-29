@@ -16,14 +16,16 @@ class UpdateCustomerRequest extends FormRequest
 
     public function rules(): array
     {
-        // $this->customerId Livewire'dan gelecek
+        // Livewire'dan customerId gelecek
+        $customerId = $this->input('customerId') ?? $this->route('customer')?->id;
+
         return [
             'name' => ['required', 'string', 'min:3', 'max:255'],
             'email' => [
                 'required',
                 'email',
                 'max:255',
-                Rule::unique('customers', 'email')->ignore($this->customerId),
+                Rule::unique('customers', 'email')->ignore($customerId),
             ],
             'phone' => ['required', 'string', 'max:20'],
             'address' => ['required', 'string', 'max:500'],
@@ -40,9 +42,14 @@ class UpdateCustomerRequest extends FormRequest
             'name.required' => 'Namn är obligatoriskt.',
             'name.min' => 'Namn måste vara minst 3 tecken.',
             'email.required' => 'E-post är obligatorisk.',
+            'email.email' => 'Ange en giltig e-postadress.',
             'email.unique' => 'Denna e-post används redan.',
             'phone.required' => 'Telefon är obligatorisk.',
+            'phone.max' => 'Telefon får inte vara längre än 20 tecken.',
             'address.required' => 'Adress är obligatorisk.',
+            'date_of_birth.before' => 'Födelsedatum måste vara före idag.',
+            'membership_type.required' => 'Medlemstyp är obligatorisk.',
+            'customer_kind.required' => 'Kundtyp är obligatorisk.',
         ];
     }
 }

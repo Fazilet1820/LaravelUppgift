@@ -35,6 +35,10 @@
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Namn</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Email</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Telefon</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Adress</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Kundtype</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Medlemstype</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Active Status</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Åtgärder</th>
                     </tr>
                 </thead>
@@ -53,32 +57,42 @@
                             <td class="px-6 py-4">
                                 <div class="text-sm text-gray-900">{{ $customer->phone }}</div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-    <a href="{{ route('customers.show', $customer->id) }}"
-       style="display: inline-block; padding: 6px 12px; background-color: #2563eb; color: white; border-radius: 6px; text-decoration: none; margin-right: 8px;"
-       onmouseover="this.style.backgroundColor='#1d4ed8'"
-       onmouseout="this.style.backgroundColor='#2563eb'">
-        Visa
-    </a>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-900">{{ $customer->address }}</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-900">{{ $customer->customer_kind }}</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-900">{{ $customer->membership_type }}</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm">
+                                    @if($customer->is_active)
+                                        <span class="text-white bg-green-500 px-2 py-1 rounded">Active</span>
+                                    @else
+                                        <span class="text-white bg-red-500 px-2 py-1 rounded">Inactive</span>
+                                    @endif
+                                </div>
+                            </td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium flex gap-2">
     <a href="{{ route('customers.edit', $customer->id) }}"
-       style="display: inline-block; padding: 6px 12px; background-color: #16a34a; color: white; border-radius: 6px; text-decoration: none; margin-right: 8px;"
-       onmouseover="this.style.backgroundColor='#15803d'"
-       onmouseout="this.style.backgroundColor='#16a34a'">
-        Redigera
+       class="inline-flex items-center justify-center px-3 py-1 text-white rounded hover:bg-red-500">
+        ✏️
     </a>
+
     <button
         wire:click="deleteCustomer({{ $customer->id }})"
         wire:confirm="Är du säker på att du vill ta bort kunden?"
-        style="display: inline-block; padding: 6px 12px; background-color: #dc2626; color: white; border-radius: 6px; border: none; cursor: pointer;"
-        onmouseover="this.style.backgroundColor='#b91c1c'"
-        onmouseout="this.style.backgroundColor='#dc2626'">
-        Ta bort
+        class="inline-flex items-center justify-center px-3 py-1 text-white rounded hover:bg-red-600">
+        🗑️
     </button>
 </td>
+
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="px-6 py-8 text-center text-gray-500">
+                            <td colspan="8" class="px-6 py-8 text-center text-gray-500">
                                Det finns inga kunder ännu.
                             </td>
                         </tr>
