@@ -19,14 +19,13 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::view('/', 'dashboard')
-    ->name('dashboard');
+Route::view('/', 'dashboard')  ->name('dashboard');
 
 Route::get('/customers/form', CustomerForm::class)->name('customers.form');
 Route::get('/customers', CustomerListComponent::class)->name('customers.index');  // ← ALIAS used here
-Route::get('/customers/{customer}/edit', CustomerForm::class)->name('customers.edit');
-Route::get('/customers/{customer}', CustomerDetails::class)->name('customers.show');
 
+Route::get('/customers/{id}', CustomerDetails::class)->name('customers.show');
+Route::get('/customers/{customer}/edit', CustomerForm::class)->name('customers.edit');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
