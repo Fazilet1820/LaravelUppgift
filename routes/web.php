@@ -10,7 +10,7 @@ use App\Livewire\Customers\CustomerList as CustomerListComponent;  // ← ALIAS 
 use App\Livewire\Customers\CustomerDetails;
 
 // Redirect home route to my dashboard when project starts
-Route::get('/home', function () {
+Route::get('/', function () {
     return redirect()->route('dashboard');
 })->name('home');
 
