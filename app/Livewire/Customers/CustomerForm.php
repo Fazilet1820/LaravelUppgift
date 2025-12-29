@@ -22,21 +22,22 @@ class CustomerForm extends Component
     public string $membership_type = '';  // ← Boş string olarak başlat
     public bool $is_active = true;
 
-    public function mount(?int $customerId = null): void
-    {
-        if ($customerId) {
-            $this->customer = Customer::findOrFail($customerId);
+   public function mount(?Customer $customer = null): void
+{
+    if ($customer) {
+        $this->customer = $customer;
 
-            $this->name = $this->customer->name;
-            $this->email = $this->customer->email;
-            $this->phone = $this->customer->phone;
-            $this->address = $this->customer->address;
-            $this->date_of_birth = $this->customer->date_of_birth?->format('Y-m-d');
-            $this->customer_kind = $this->customer->customer_kind->value ?? $this->customer->customer_kind;
-            $this->membership_type = $this->customer->membership_type->value ?? $this->customer->membership_type;
-            $this->is_active = $this->customer->is_active;
-        }
+        $this->name = $customer->name;
+        $this->email = $customer->email;
+        $this->phone = $customer->phone;
+        $this->address = $customer->address;
+        $this->date_of_birth = $customer->date_of_birth?->format('Y-m-d');
+        $this->customer_kind = $customer->customer_kind instanceof \BackedEnum ? $customer->customer_kind->value : $customer->customer_kind;
+        $this->membership_type = $customer->membership_type instanceof \BackedEnum ? $customer->membership_type->value : $customer->membership_type;
+        $this->is_active = $customer->is_active;
     }
+}
+
 
     protected function rules(): array
     {
@@ -94,7 +95,8 @@ class CustomerForm extends Component
                 session()->flash('success', 'Kund skapad framgångsrikt!');
 
                 DB::commit();
-                return redirect()->route('customers.index');
+                $this->resetForm();
+                return;
             }
 
             DB::commit();
