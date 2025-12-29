@@ -27,7 +27,7 @@ class UpdateCustomerRequest extends FormRequest
                 'max:255',
                 Rule::unique('customers', 'email')->ignore($customerId),
             ],
-            'phone' => ['required', 'string', 'max:20'],
+            'phone' => ['required', 'regex:/^\+?[0-9\s]{7,20}$/', 'max:20'],
             'address' => ['required', 'string', 'max:500'],
             'date_of_birth' => ['nullable', 'date', 'before:today'],
             'membership_type' => ['required', Rule::enum(MembershipType::class)],

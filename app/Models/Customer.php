@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Enums\MembershipType;
 use App\Enums\CustomerKind;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Customer extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'email',
