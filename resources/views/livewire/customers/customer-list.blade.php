@@ -75,23 +75,20 @@
                                     @endif
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
+                            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium flex gap-2">
+    <a href="{{ route('customers.edit', $customer->id) }}"
+       class="inline-flex items-center justify-center px-3 py-1 text-white rounded hover:bg-red-500">
+        ✏️
+    </a>
 
-                            <a href="{{ route('customers.edit', $customer->id) }}"
-    class="inline-flex items-center justify-center px-3 py-1 text-white rounded hover:bg-red-500">
-    ✏️
-</a>
+    <button
+        wire:click="deleteCustomer({{ $customer->id }})"
+        wire:confirm="Är du säker på att du vill ta bort kunden?"
+        class="inline-flex items-center justify-center px-3 py-1 text-white rounded hover:bg-red-600">
+        🗑️
+    </button>
+</td>
 
-<button
-    wire:click="deleteCustomer({{ $customer->id }})"
-    wire:confirm="Är du säker på att du vill ta bort kunden?"
-    class="inline-flex items-center justify-center px-3 py-1 text-white rounded hover:bg-red-600">
-    🗑️
-</button>
-
-
-                            </td>
                         </tr>
                     @empty
                         <tr>
