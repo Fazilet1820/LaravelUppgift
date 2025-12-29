@@ -13,14 +13,14 @@ class CustomerForm extends Component
 {
     public ?Customer $customer = null;
 
-    public string $name = '';
-    public string $email = '';
-    public string $phone = '';
-    public string $address = '';
-    public ?string $date_of_birth = null;
-    public string $customer_kind = '';  // ← Boş string olarak başlat
-    public string $membership_type = '';  // ← Boş string olarak başlat
-    public bool $is_active = true;
+public string $name = '';
+public string $email = '';
+public string $phone = '';
+public string $address = '';
+public ?string $date_of_birth = null;
+public string $customer_kind = 'individual';
+public string $membership_type = 'standard';
+public bool $is_active = true;
 
    public function mount(?Customer $customer = null): void
 {

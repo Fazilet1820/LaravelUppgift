@@ -8,7 +8,7 @@ use App\Enums\CustomerKind;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Customer extends Model
 {
-    use HasFactory;
+    use HasFactory; //It is a trait that allows generating fake data for testing and seeding purposes for Eloquent models. In short: it is used so that Model::factory() works.
 
     protected $fillable = [
         'name',
