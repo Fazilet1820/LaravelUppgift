@@ -1,31 +1,26 @@
 <?php
-
 namespace App\Livewire\Customers;
 
 use Livewire\Component;
 use App\Models\Customer;
-use Livewire\Attributes\Locked;
 
 class CustomerDetails extends Component
 {
-    public int $customerId;
+    public $customer; // <-- Burası artık model
 
-    public function mount(int $id)
+    public function mount(Customer $customer)
     {
-        $this->customerId = $id;
+        $this->customer = $customer;
+    }
 
-        // Müşterinin var olup olmadığını kontrol et
-        if (!Customer::find($id)) {
-            abort(404, 'Müşteri bulunamadı');
-        }
+    public function toJSON() // to prevent JSON serialization issues
+    {
+        return response()->json($this->customer);
     }
 
     public function render()
     {
-        $customer = Customer::findOrFail($this->customerId);
-
-        return view('livewire.customers.customer-details', [
-            'customer' => $customer
-        ]);
+        return view('livewire.customers.customer-details');
+        // Blade'de zaten $customer property’si var, tekrar gönderilmeye gerek yok
     }
 }
