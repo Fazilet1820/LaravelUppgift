@@ -40,7 +40,7 @@
             <input
                 type="text"
                 id="name"
-                wire:model.blur="name"
+                wire:model="name"
                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('name') border-red-500 @else border-gray-300 @enderror"
                 placeholder="Ange kundnamn"
             >
@@ -55,7 +55,7 @@
             <input
                 type="email"
                 id="email"
-                wire:model.blur="email"
+                wire:model="email"
                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('email') border-red-500 @else border-gray-300 @enderror"
                 placeholder="exempel@email.com"
             >
@@ -70,7 +70,7 @@
             <input
                 type="tel"
                 id="phone"
-                wire:model.blur="phone"
+                wire:model="phone"
                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('phone') border-red-500 @else border-gray-300 @enderror"
                 placeholder="+46 70 123 45 67"
             >
@@ -84,7 +84,7 @@
             </label>
             <textarea
                 id="address"
-                wire:model.blur="address"
+                wire:model="address"
                 rows="3"
                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('address') border-red-500 @else border-gray-300 @enderror"
                 placeholder="Gatuadress, postnummer, stad"
@@ -101,7 +101,7 @@
                 </label>
                 <select
                     id="customer_kind"
-                    wire:model.blur="customer_kind"
+                    wire:model="customer_kind"
                     class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('customer_kind') border-red-500 @else border-gray-300 @enderror"
                 >
                     <option value="">Välj kundtyp</option>
@@ -119,7 +119,7 @@
                 </label>
                 <select
                     id="membership_type"
-                    wire:model.blur="membership_type"
+                    wire:model="membership_type"
                     class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('membership_type') border-red-500 @else border-gray-300 @enderror"
                 >
                     <option value="">Välj medlemstyp</option>
@@ -139,7 +139,7 @@
             <input
                 type="date"
                 id="date_of_birth"
-                wire:model.blur="date_of_birth"
+                wire:model="date_of_birth"
                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('date_of_birth') border-red-500 @else border-gray-300 @enderror"
             >
             @error('date_of_birth')<p class="mt-1 text-sm text-red-600">{{ $message }}</p>@enderror
