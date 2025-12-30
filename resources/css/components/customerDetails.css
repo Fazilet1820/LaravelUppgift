@@ -1,0 +1,145 @@
+/* Container */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Margin-bottom utility */
+.margin-bottom {
+    margin-bottom: 1.5rem;
+}
+
+.status-margin-top {
+    margin-top: 0.5rem;
+}
+
+/* Card */
+.customer-card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+.customer-header {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-right {
+    display: flex;
+    align-items: flex-start; /* üstten hizalı */
+}
+
+/* Customer Name & Status */
+.customer-name {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.customer-status-active {
+    background-color: #22c55e;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+}
+
+.customer-status-inactive {
+    background-color: #ef4444;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+}
+
+/* Edit button */
+.customer-edit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.customer-edit-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Content */
+.customer-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Section header */
+.customer-section-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Info box - Flexbox 3 sütun */
+.customer-info-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Her zaman 3 sütun */
+.customer-info-item {
+    flex: 0 0 30%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    min-height: 40px;
+}
+
+/* Label */
+.customer-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Text */
+.customer-text {
+    font-size: 1rem;
+    color: #111827;
+}
+
+.customer-text-small {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
