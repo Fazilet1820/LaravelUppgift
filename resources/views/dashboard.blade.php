@@ -64,6 +64,7 @@
                             <li>• PHP</li>
                             <li>• MySQL</li>
                             <li>• Blade Templating</li>
+                            <li>• Feature Tests</li>
                         </ul>
                     </div>
                 </div>
