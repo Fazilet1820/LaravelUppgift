@@ -1,9 +1,10 @@
 <x-layouts.app :title="__('Dashboard')">
     <div class="flex h-full w-full flex-1 flex-col gap-8 p-8">
         <!-- Välkomstsektion -->
-            <div class="rounded-xl p-10 shadow-xl" style="background: linear-gradient(to right, #2563eb, #1d4ed8, #4338ca);">
+            <div class="rounded-xl p-10 shadow-xl" style="background: linear-gradient(to right, #B0AFB0, #A3A2A2, #969595);">
+
             <h1 class="mb-4 text-5xl font-extrabold drop-shadow-lg" style="color: white;">Välkommen!</h1>
-            <p class="text-2xl font-medium" style="color: white;">Glad att se dig här!</p>
+            <p class="text-2xl font-medium" style="color: white;">Jag hoppas att mitt projekt har nått den önskade nivån</p>
         </div>
 
         <!-- Projektinformation -->
@@ -24,8 +25,8 @@
                 <div class="rounded-lg bg-gray-50 p-4 dark:bg-zinc-900">
                     <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Om Projektet</h3>
                     <p class="text-gray-700 leading-relaxed dark:text-gray-300">
-                        En liten del av ett affärssystem med <span class="font-semibold text-blue-600 dark:text-blue-400">Laravel</span> (backend)
-                        och <span class="font-semibold text-blue-600 dark:text-blue-400">Livewire</span> (UI) med PHP.
+                        En liten del av ett affärssystem med <span class="font-semibold text-black dark:text-black">Laravel</span> (backend)
+                        och <span class="font-semibold text-black dark:text-blue-400">Livewire</span> (UI) med PHP.
                     </p>
                 </div>
 
@@ -38,9 +39,14 @@
                             <h4 class="font-semibold text-gray-900 dark:text-white">Funktioner</h4>
                         </div>
                         <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-400">
-                            <li>• Kundhantering</li>
+                            <li>• Kundhantering :
+                               <br> -Skapa ny kund
+                                <br>-uppdatera kund
+                                <br>-ta bort kund
+                            </li>
                             <li>• Formulär & Validering</li>
                             <li>• Real-time Uppdateringar</li>
+                            <li>• Sök funktion med efternamn, e-post eller telefonnummer</li>
                         </ul>
                     </div>
 
@@ -52,9 +58,12 @@
                             <h4 class="font-semibold text-gray-900 dark:text-white">Teknologier som används i projektet</h4>
                         </div>
                         <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-400">
-                            <li>• Laravel 12</li>
-                            <li>• Livewire 3</li>
-                            <li>• Flux UI Components</li>
+                            <li>• Laravel </li>
+                            <li>• Livewire </li>
+                            <li>• TailwindCSS</li>
+                            <li>• PHP</li>
+                            <li>• MySQL</li>
+                            <li>• Blade Templating</li>
                         </ul>
                     </div>
                 </div>
