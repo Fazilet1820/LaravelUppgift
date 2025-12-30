@@ -13,10 +13,10 @@ class CustomerInformation extends Component
         $this->customer = $customer;
     }
 
-    public function toJSON() // to prevent JSON serialization issues
-    {
-        return response()->json($this->customer);
-    }
+    // public function toJSON() // to prevent JSON serialization issues
+    // {
+    //     return response()->json($this->customer);
+    // }
 
     public function render()
     {

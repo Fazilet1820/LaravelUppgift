@@ -22,8 +22,8 @@ class CustomerList extends Component
     public function render()
     {
         $customers = Customer::query()
-            ->when($this->search, function($query) {
-                $query->where('name', 'like', '%' . $this->search . '%')
+            ->when($this->search, function($q) {
+                $q->where('name', 'like', '%' . $this->search . '%')
                       ->orWhere('email', 'like', '%' . $this->search . '%')
                       ->orWhere('phone', 'like', '%' . $this->search . '%');
             })
@@ -36,13 +36,14 @@ class CustomerList extends Component
     }
 
     // Delete customer method
+
     public function deleteCustomer($id)
     {
-        $customer = Customer::find($id);
+        $customer = Customer::findOrFail($id);
 
         if ($customer) {
             $customer->delete();
-            session()->flash('message', 'Kunden har raderats från listan.');
+            session()->flash('message', 'Kunden har raderats från listan.'); // You can handle this message in your Blade view. It will be better for user experience.
         }
     }
 }
