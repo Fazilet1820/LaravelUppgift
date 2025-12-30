@@ -89,17 +89,17 @@ public bool $is_active = true;
 
             if ($this->customer) {
                 $this->customer->update($validated);
-                session()->flash('success', 'Kund uppdaterad framgångsrikt!');
+                $message = 'Kund uppdaterad framgångsrikt!';
+               // session()->flash('success', 'Kund uppdaterad framgångsrikt!');
             } else {
                 Customer::create($validated);
-                session()->flash('success', 'Kund skapad framgångsrikt!');
-
-                DB::commit();
+                 $message = 'Kund skapad framgångsrikt!';
+                //session()->flash('success', 'Kund skapad framgångsrikt!');
                 $this->resetForm();
-                return;
             }
 
             DB::commit();
+            session()->flash('success', $message);
 
         } catch (\Throwable $e) {
             DB::rollBack();
