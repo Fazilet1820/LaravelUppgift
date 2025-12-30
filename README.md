@@ -58,4 +58,12 @@ https://github.com/Fazilet1820/LaravelUppgift.git
 - Sök funktion med efternamn, e-post eller telefonnummer
 - Homepage
 
+9. ## 🧪 Testning
+Projektet använder Laravel Feature Tests med Model Factories för att skapa testdata.
+
+### Köra specifika tester:
+php artisan test --filter CustomerFormTest
+
+### Database Seeding för development:
+php artisan db:seed
 
