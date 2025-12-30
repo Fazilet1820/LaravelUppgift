@@ -1,7 +1,7 @@
 <div class="container mx-auto px-4 py-8">
     <div class="bg-white rounded-lg shadow-md p-6">
 
-        {{-- Başlık ve Yeni Müşteri Butonu --}}
+        {{-- Title and new customer button --}}
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold text-gray-800">Kundlista</h2>
             <a href="{{ route('customers.form') }}"
@@ -10,14 +10,14 @@
             </a>
         </div>
 
-        {{-- Başarı Mesajı --}}
+        {{-- Success Message --}}
         @if (session()->has('message'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                 {{ session('message') }}
             </div>
         @endif
 
-        {{-- Arama Kutusu --}}
+        {{-- Search Input --}}
         <div class="mb-4">
             <input
                 type="text"
@@ -27,7 +27,7 @@
             >
         </div>
 
-        {{-- Tablo --}}
+        {{-- Table --}}
         <div class="overflow-x-auto">
             <table class="min-w-full table-auto">
                 <thead class="bg-gray-100">
