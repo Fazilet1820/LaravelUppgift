@@ -40,8 +40,8 @@
                         </div>
                         <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-400">
                             <li>• Kundhantering :
-                               <br> -Skapa ny kund
-                                <br>-uppdatera kund
+                               <br> -Skapa ny kund och uppdatera kund i samma formulär
+                                <br>- Visa kunddetaljer
                                 <br>-ta bort kund
                             </li>
                             <li>• Formulär & Validering</li>
