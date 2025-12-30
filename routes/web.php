@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use App\Livewire\Customers\CustomerForm;
 use App\Livewire\Customers\CustomerList as CustomerListComponent;  // ← ALIAS added because of name conflict (changed folder and caused problem)
-use App\Livewire\Customers\CustomerDetails;
+use App\Livewire\Customers\CustomerInformation;
 
 // Redirect home route to my dashboard when project starts
 Route::get('/', function () {
@@ -16,11 +16,10 @@ Route::get('/', function () {
 
 
 Route::view('/dashboard', 'dashboard')  ->name('dashboard');
-
 Route::get('/customers/form', CustomerForm::class)->name('customers.form');
 Route::get('/customers', CustomerListComponent::class)->name('customers.index');  // ← ALIAS used here
 Route::get('/customers/{customer}/edit', CustomerForm::class)->name('customers.edit');
-Route::get('/customers/{customer}', CustomerDetails::class)->name('customers.show');
+Route::get('/customers/{customer}', CustomerInformation::class)->name('customers.show');
 
 
 Route::middleware(['auth'])->group(function () {

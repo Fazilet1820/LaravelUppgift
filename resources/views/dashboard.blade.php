@@ -42,7 +42,7 @@
                             <li>• Kundhantering :
                                <br> -Skapa ny kund och uppdatera kund i samma formulär
                                 <br>- Visa kunddetaljer
-                                <br>-ta bort kund
+                                <br>- Ta bort kund
                             </li>
                             <li>• Formulär & Validering</li>
                             <li>• Real-time Uppdateringar</li>

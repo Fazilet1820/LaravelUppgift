@@ -4,9 +4,9 @@ namespace App\Livewire\Customers;
 use Livewire\Component;
 use App\Models\Customer;
 
-class CustomerDetails extends Component
+class CustomerInformation extends Component
 {
-    public $customer; // <-- Burası artık model
+    public $customer;
 
     public function mount(Customer $customer)
     {
@@ -20,7 +20,7 @@ class CustomerDetails extends Component
 
     public function render()
     {
-        return view('livewire.customers.customer-details');
-        // Blade'de zaten $customer property’si var, tekrar gönderilmeye gerek yok
+        return view('livewire.customers.customer-information');
+
     }
 }

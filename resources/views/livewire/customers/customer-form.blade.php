@@ -1,6 +1,6 @@
 <div class="max-w-3xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
     <div class="mb-6">
-        <h1 class="text-3xxl font-bold text-black">{{ $this->formTitle }}</h1>
+        <h1 class="text-3xl font-bold text-black">{{ $this->formTitle }}</h1>
         @if($this->isEditMode)
             <p class="mt-1 text-sm text-gray-500">
                 Kund-ID: #{{ $this->customer->id }} | Skapad: {{ $this->customer->created_at->format('Y-m-d H:i') }}
