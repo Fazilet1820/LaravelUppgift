@@ -1,6 +1,7 @@
 # Proxicore – Kundhanteringssystem
 
 Detta projekt är ett enkelt kundhanteringssystem byggt med Laravel och Livewire. Syftet är att visa hur man kan bygga grunden till ett affärssystem med tydlig struktur, moderna Laravel-funktioner och skalbar arkitektur.
+Vänligen läs dokumentationen nedan för mer information om projektet: https://docs.google.com/document/d/1Wuz1bD61LSZ6-JSB9xNS-FrXDczsiaSJtOB4v-mUj_M/edit?usp=sharing 
 
 ## 🚀 Tekniker
 
