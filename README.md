@@ -16,45 +16,45 @@ Detta projekt är ett enkelt kundhanteringssystem byggt med Laravel och Livewire
 https://github.com/Fazilet1820/LaravelUppgift.git
 
 2. Installera beroenden(version som används i projekt):
-laravel installer (5.23.2)
-composer (2.8.12)
-node  (v20.10.0)
-npm (10.2.3)
+- laravel installer (5.23.2)
+- composer (2.8.12)
+- node  (v20.10.0)
+- npm (10.2.3)
 
 3.Konfigurera miljö:
-cp .env.example .env
-php artisan key:generate
+- cp .env.example .env
+- php artisan key:generate
 
 4. Konfigurera databasen i .env (i prrojektet används MYSQL):
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=(your database name)
-DB_USERNAME=root
-DB_PASSWORD=(your password)
+- DB_CONNECTION=mysql
+- DB_HOST=127.0.0.1
+- DB_PORT=3306
+- DB_DATABASE=(your database name)
+- DB_USERNAME=root
+- DB_PASSWORD=(your password)
 
 5. Kör migrationer
-php artisan migrate
+- php artisan migrate
 
 6. Starta applikationen:
-npm run dev
-php artisan serve
+- npm run dev
+- php artisan serve
 
 7. | Route                        | Metod | Beskrivning       |
-| ---------------------------- | ----- | ----------------- |
-| `/customers`                 | GET   | Kundlista         |
-| `/customers/form`            | GET   | Skapa ny kund     |
-| `/customers/{customer}/edit` | GET   | Redigera kund     |
-| `/customers/{customer}`      | GET   | Visa kunddetaljer |
-| `/dashboard}`                | GET   | Visa homepage     |
+
+ - | `/customers`                 | GET   | Kundlista         |
+ - | `/customers/form`            | GET   | Skapa ny kund     |
+ - | `/customers/{customer}/edit` | GET   | Redigera kund     |
+ - | `/customers/{customer}`      | GET   | Visa kunddetaljer |
+ - | `/dashboard}`                | GET   | Visa homepage     |
 
 8. Funktioner
-• Kundhantering :
--Skapa ny kund och uppdatera kund i samma formulär
-- Visa kunddetaljer
--ta bort kund
-• Formulär & Validering
-• Sök funktion med efternamn, e-post eller telefonnummer
-• Homepage
+- Kundhantering :
+   -Skapa ny kund och uppdatera kund i samma formulär
+   - Visa kunddetaljer
+   -ta bort kund
+- Formulär & Validering
+- Sök funktion med efternamn, e-post eller telefonnummer
+- Homepage
 
 
