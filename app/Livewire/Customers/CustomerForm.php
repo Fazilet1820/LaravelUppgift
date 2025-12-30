@@ -9,18 +9,29 @@ use Livewire\Component;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Title;
 
+enum CustomerKind: string {
+    case INDIVIDUAL = 'individual';
+    case COMPANY = 'company';
+    case GOVERNMENT = 'government';
+}
+
+enum MembershipType: string {
+    case STANDARD = 'standard';
+    case PREMIUM = 'premium';
+}
+
 class CustomerForm extends Component
 {
     public ?Customer $customer = null;
 
-public string $name = '';
-public string $email = '';
-public string $phone = '';
-public string $address = '';
-public ?string $date_of_birth = null;
-public string $customer_kind = 'individual';
-public string $membership_type = 'standard';
-public bool $is_active = true;
+    public string $name = '';
+    public string $email = '';
+    public string $phone = '';
+    public string $address = '';
+    public ?string $date_of_birth = null;
+    public string $customer_kind = 'individual';
+    public string $membership_type = 'standard';
+    public bool $is_active = true;
 
    public function mount(?Customer $customer = null): void
 {
@@ -44,7 +55,7 @@ public bool $is_active = true;
         $rules = [
             'name' => ['required', 'string', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
-            'phone' => ['required', 'string', 'max:20'],
+            'phone' => ['required', 'regex:/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/', 'max:20'],
             'address' => ['required', 'string', 'max:500'],
             'date_of_birth' => ['nullable', 'date', 'before:today'],
             'customer_kind' => ['required', 'in:individual,company,government'],
@@ -52,7 +63,7 @@ public bool $is_active = true;
             'is_active' => ['boolean'],
         ];
 
-        // Email unique kontrolü
+        // Email unique kontrol
         if ($this->customer) {
             $rules['email'][] = Rule::unique('customers', 'email')->ignore($this->customer->id);
         } else {
@@ -105,6 +116,8 @@ public bool $is_active = true;
             DB::rollBack();
             report($e);
             session()->flash('error', 'Ett fel uppstod. Försök igen.');
+            // Optionally, you can log the error message: $e->getMessage()
+            // (databas problem kan vara mostly?)
         }
     }
 
