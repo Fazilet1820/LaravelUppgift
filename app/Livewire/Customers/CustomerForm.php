@@ -139,7 +139,7 @@ public bool $is_active = true;
     #[Computed]
     public function submitButtonText(): string
     {
-        return $this->isEditMode ? 'Uppdatera' : 'Skapa';
+        return $this->isEditMode ? 'Uppdatera' : 'Spara';
     }
 
     #[Computed]
