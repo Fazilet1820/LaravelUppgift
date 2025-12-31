@@ -8,17 +8,9 @@ use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Title;
+use App\Enums\MembershipType;
+use App\Enums\CustomerKind;
 
-enum CustomerKind: string {
-    case INDIVIDUAL = 'individual';
-    case COMPANY = 'company';
-    case GOVERNMENT = 'government';
-}
-
-enum MembershipType: string {
-    case STANDARD = 'standard';
-    case PREMIUM = 'premium';
-}
 
 class CustomerForm extends Component
 {
